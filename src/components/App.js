@@ -5,7 +5,7 @@ import NavBar from "./NavBar"
 import NewStudentForm from "./NewStudentForm"
 import StudentList from "./StudentList"
 import StudentGroups from "./Groups"
-import Questions from "./Questions"
+import Checkbox from "./Checkbox"
 
 function App() {
   
@@ -25,7 +25,7 @@ function App() {
         <StudentGroups />
       </Route>
       <Route path = "/questions">
-        <Questions />
+        <Checkbox />
       </Route>
       <Route exact path = "/">
         <h1> TBD Picture and theory</h1>  <h3>(has to be in a Home component)</h3>

@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import Questions from "./Questions";
+import Checkbox from "./Checkbox";
 
 
 function NewStudentForm(){
-const [isChecked, setIsChecked]=useState([])
 const [formData, setFormData] = useState({
     student:{
     id:"" ,
@@ -31,7 +30,7 @@ function handleSubmit(e){
 function getDominantLetter(e){ 
   for (let i=2; i<26; i++){
    let currentCheckBox = e.target[i];
-   if (currentCheckBox)
+  //  if (currentCheckBox.id === i)
   
     console.log(currentCheckBox)
     // arrayLetters.push(value.target[i].input.defaultValue)
@@ -64,7 +63,7 @@ function getDominantLetter(e){
       />
       <div>
         <br />
-      <Questions />
+      <Checkbox />
       </div>
       <br />
       <button type="submit">Submit my info</button>
