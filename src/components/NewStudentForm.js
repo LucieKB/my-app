@@ -3,6 +3,7 @@ import Questions from "./Questions";
 
 
 function NewStudentForm(){
+const [isChecked, setIsChecked]=useState([])
 const [formData, setFormData] = useState({
     student:{
     id:"" ,
@@ -21,17 +22,25 @@ function handleChange(event) {
 
     console.log(formData)
 }
-function getDominantLetter(e){ 
-  for (let i=2; i<38; i++){
-   let currentCheckBox = e.target[i];
-   if (current )
-  }
 
-}
-  
 function handleSubmit(e){
+  e.preventDefault()
     getDominantLetter(e)
     }
+
+function getDominantLetter(e){ 
+  for (let i=2; i<26; i++){
+   let currentCheckBox = e.target[i];
+   if (currentCheckBox)
+  
+    console.log(currentCheckBox)
+    // arrayLetters.push(value.target[i].input.defaultValue)
+   }
+  }
+
+
+  
+
     
 
   return (

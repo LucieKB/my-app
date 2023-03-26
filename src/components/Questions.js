@@ -1,23 +1,21 @@
 import React, {useState} from "react"
 import {behavior} from "../utils/behaviorCheckbox.js"
 
-function Questions(){
+function Questions({isChecked}){
     const [personality, setPersonality] = useState([])
-    const [isChecked, setIsChecked]=useState([])
+    
 
-   const handleOnChange = () => {
-    setIsChecked(!isChecked)
-   }
    
-    function handleChangeChecked(e){
+   
+    function handleOnChange(e){
         do{
         if(isChecked){
            const personalityArray= [...personality].push(e.target.value)
             setPersonality(personalityArray)
         }}
-        while(personality.length<=3);
-     console.log(personality)   
-    }
+    //     while(personality.length<=3);
+    //  console.log(personality)   
+    
 
 // add a limit to only check 10 attributes
 
@@ -35,7 +33,7 @@ function Questions(){
                 name={label}
                 value={value}
                 checked={isChecked[index]}
-                onChange={()=>handleOnChange(index)}
+                onChange={()=>handleOnChange}
                 />{label}
             </div>
         </li>
