@@ -1,16 +1,10 @@
 import React, {useState} from "react";
 import Checkbox from "./Checkbox";
+import StudentCard from "./StudentCard"
 
 
-function NewStudentForm({updatedList}){
-const [formData, setFormData] = useState({
-    student:{
-    id:"" ,
-    firstName: "",
-    lastName: "",
-    dominantLetter:"",
-  }
-});
+function NewStudentForm(){
+const [formData, setFormData] = useState({});
 const [arrayLetters, setArrayLetters]=useState([])
 
 function handleChange(event) {
@@ -28,7 +22,28 @@ function handleSubmit(e){
   const counts = {};
   arrayLetters.forEach(function(x) {counts[x] = (counts[x] || 0) + 1})
   console.log (counts)
-    }
+  const dominantLetter = Object.keys(counts).reduce(function(a,b){return counts[a]>counts[b]? a:b});
+  formData.personality=dominantLetter;
+  setFormData({...formData 
+  })
+  console.log(formData)}
+
+  // fetch ("../db.json",{
+  //   method:"POST",
+  //   headers:{
+  //     "Content-Type": "application/json" 
+  //   },
+  //   body: JSON.stringify({
+  //     firstName : formData.firstName,
+  //     lastName : formData.lastName,
+  //     personalityType : formData.personality
+  //  })
+
+ 
+  
+// setFormData([...formData.push(dominantLetter)]) 
+
+// console.log(formData)}
 
 // function getDominantLetter(e){ 
 //   for (let i=2; i<26; i++){
@@ -70,6 +85,8 @@ function handleSubmit(e){
       </div>
       <br />
       <button type="submit">Submit my info</button>
+
+      {/* <StudentCard formData={formData}/> */}
     </form>
     </section>
   );

@@ -1,42 +1,44 @@
-import React, {useState, useEffect} from "./react"
+// import React, {useState, useEffect} from "./react"
 
-function StudentCard(){
+// function StudentCard(){
 
-    function animalImage(){
-        const[animal, setAnimal]= useState(null)
+//     function animalImage({student}){
+//         const[animal, setAnimal]= useState(null)
 
-    useEffect(()=>{
-        fetch ("./images")
-        .then(r=>r.json())
-        .then(animal => setAnimal(animal.image))
-    }, [student])
+//     useEffect(()=>{
+//         fetch ("./images")
+//         .then(r=>r.json())
+//         .then(animal => setAnimal(animal.image))
+//     }, [student])
 
-    if(!animal){
-        return <h2>Loading...</h2>
-    }
-    }
-
-
+//     if(!animal){
+//         return <h2>Loading...</h2>
+//     }
+//     }
 
 
-    return(
+
+
+//     return(
     
-            <Card>
-              <div>
-                <div className="names">{student.firstName} {student.lastName}</div>
-                </div>
-                <div className="personnalityType">
-                  <span>
-                  <div className="image">
-                    {animal.name}
-                  <img className="animalImage"  
-                //   src= {ternary with the assigned animal}
-                  alt={animal.name} />
-                </div>
-                  </span>
-                </div>
-            </Card>
-            );
-}
+//   <section>
+//                 <div className="names">
+//                   {student.firstName} {student.lastName}
+//                 </div>
+      
+//                 <div className="personnalityType">
+//                   <h2> Your Personality type :</h2>
+//                 </div>
+//                   <div className="image">
+//                     {animal.name}
+//                   <img className="animalImage"  
+//                 //   src= {ternary with the assigned animal}
+//                   alt={animal.name} />
+//                 </div>
+// </section>                  
 
-export default StudentCard;
+  
+//             );
+// }
+
+// export default StudentCard;
