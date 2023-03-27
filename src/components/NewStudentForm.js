@@ -24,7 +24,10 @@ function handleChange(event) {
 
 function handleSubmit(e){
   e.preventDefault()
-    arrayLetters.filter
+  console.log(arrayLetters)
+  const counts = {};
+  arrayLetters.forEach(function(x) {counts[x] = (counts[x] || 0) + 1})
+  console.log (counts)
     }
 
 // function getDominantLetter(e){ 
