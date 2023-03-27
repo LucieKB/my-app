@@ -26,19 +26,25 @@ function handleSubmit(e){
   formData.personality=dominantLetter;
   setFormData({...formData 
   })
-  console.log(formData)}
+  console.log(formData)
 
-  // fetch ("../db.json",{
-  //   method:"POST",
-  //   headers:{
-  //     "Content-Type": "application/json" 
-  //   },
-  //   body: JSON.stringify({
-  //     firstName : formData.firstName,
-  //     lastName : formData.lastName,
-  //     personalityType : formData.personality
-  //  })
-
+  fetch ("http://localhost:3001/students",{
+    method:"POST",
+    headers:{
+      "Content-Type": "application/json" 
+    },
+    body: JSON.stringify({
+      firstName : formData.firstName,
+      lastName : formData.lastName,
+      personalityType : formData.personality
+  })
+})
+setFormData({
+  firstName : "",
+  lastName : "",
+  personalityType : ""
+})
+}
  
   
 // setFormData([...formData.push(dominantLetter)]) 

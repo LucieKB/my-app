@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "firstName": "John",
+      "lastName": "Smith ",
+      "personalityType": "L",
+      "id": 1
+    },
+    {
+      "firstName": "Brie",
+      "lastName": "Darmon",
+      "personalityType": "B",
+      "id": 2
+    },
+    {
+      "firstName": "Agathe ",
+      "lastName": "Matter ",
+      "personalityType": "G",
+      "id": 3
+    }
+  ]
+}

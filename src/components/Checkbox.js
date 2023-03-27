@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import {behavior} from "../utils/behaviorCheckbox.js"
 
 function Checkbox({arrayLetters, setArrayLetters}){
-    // const [personality, setPersonality] = useState([])
     const [checked, setChecked]=useState([])
     const [selected, setSelected]=useState(false)
 
