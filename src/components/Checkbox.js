@@ -1,26 +1,24 @@
 import React, {useState} from "react"
 import {behavior} from "../utils/behaviorCheckbox.js"
 
-function Checkbox(){
+function Checkbox({arrayLetters, setArrayLetters}){
     // const [personality, setPersonality] = useState([])
     const [checked, setChecked]=useState([])
     const [selected, setSelected]=useState(false)
 
-    
-
    const handleCheck = (e) => {
-    let updatedList= [...checked];
+    
+    let arrayLetters= [...checked];
     if (e.target.checked){
-        updatedList = [...checked, e.target.value];
-    }else{updatedList.splice(checked.indexOf(e.target.value), 1);
+        arrayLetters = [...checked, e.target.value];
+    }else{arrayLetters.splice(checked.indexOf(e.target.value), 1);
     }
-    setChecked(updatedList)
+    setChecked(arrayLetters)
 
     if (e.target.checked){
         setSelected(true)
     }
-
-    console.log(updatedList)
+    setArrayLetters(arrayLetters)
     };
    
    

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Checkbox from "./Checkbox";
 
 
-function NewStudentForm(){
+function NewStudentForm({updatedList}){
 const [formData, setFormData] = useState({
     student:{
     id:"" ,
@@ -24,18 +24,18 @@ function handleChange(event) {
 
 function handleSubmit(e){
   e.preventDefault()
-    getDominantLetter(e)
+    arrayLetters.filter
     }
 
-function getDominantLetter(e){ 
-  for (let i=2; i<26; i++){
-   let currentCheckBox = e.target[i];
-  //  if (currentCheckBox.id === i)
+// function getDominantLetter(e){ 
+//   for (let i=2; i<26; i++){
+//    let currentCheckBox = e.target[i];
+//   //  if (currentCheckBox.id === i)
   
-    console.log(currentCheckBox)
-    // arrayLetters.push(value.target[i].input.defaultValue)
-   }
-  }
+//     console.log(currentCheckBox)
+//     // arrayLetters.push(value.target[i].input.defaultValue)
+//    }
+//   }
 
 
   
@@ -63,7 +63,7 @@ function getDominantLetter(e){
       />
       <div>
         <br />
-      <Checkbox />
+      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters}/>
       </div>
       <br />
       <button type="submit">Submit my info</button>
