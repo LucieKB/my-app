@@ -30,7 +30,7 @@ function NavBar(){
           }}>
             Add a New Student
           </NavLink>
-          <NavLink  to="/participants"
+          <NavLink  to="/studentList"
           style={linkStyles}
           activeStyle={{
             color: "lawngreen",

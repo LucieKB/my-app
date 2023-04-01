@@ -8,7 +8,13 @@ import StudentGroups from "./Groups"
 import Checkbox from "./Checkbox"
 
 function App() {
-  
+const [students, setStudents]=useState([])
+
+  useEffect(()=>{
+    fetch ("http://localhost:3001/students")
+    .then((r)=>r.json())
+    .then((students)=> setStudents(students));
+  }, []) 
 
   return (
     <div>
@@ -19,7 +25,7 @@ function App() {
         <NewStudentForm />
       </Route>
       <Route path = "/studentList">
-        <StudentList />
+        <StudentList students={students}/>
       </Route>
       <Route path = "/studentgroups">
         <StudentGroups />

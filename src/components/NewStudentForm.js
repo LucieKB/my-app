@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 import Checkbox from "./Checkbox";
 import StudentCard from "./StudentCard"
 
@@ -6,6 +7,8 @@ import StudentCard from "./StudentCard"
 function NewStudentForm(){
 const [formData, setFormData] = useState({});
 const [arrayLetters, setArrayLetters]=useState([])
+const [trigger, setTrigger]=useState(0);
+const history = useHistory();
 
 function handleChange(event) {
   setFormData({
@@ -39,27 +42,20 @@ function handleSubmit(e){
       personalityType : formData.personality
   })
 })
+  .then(r=>r.json())
+  .then (data => {history.push(`/studentList/`)
+})
+
 setFormData({
   firstName : "",
   lastName : "",
   personalityType : ""
 })
+
+setTrigger((trigger) => trigger+1)
 }
  
-  
-// setFormData([...formData.push(dominantLetter)]) 
 
-// console.log(formData)}
-
-// function getDominantLetter(e){ 
-//   for (let i=2; i<26; i++){
-//    let currentCheckBox = e.target[i];
-//   //  if (currentCheckBox.id === i)
-  
-//     console.log(currentCheckBox)
-//     // arrayLetters.push(value.target[i].input.defaultValue)
-//    }
-//   }
 
 
   
@@ -87,7 +83,7 @@ setFormData({
       />
       <div>
         <br />
-      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters}/>
+      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters} trigger={trigger}/>
       </div>
       <br />
       <button type="submit">Submit my info</button>

@@ -1,9 +1,19 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {behavior} from "../utils/behaviorCheckbox.js"
 
-function Checkbox({arrayLetters, setArrayLetters}){
+function Checkbox({arrayLetters, setArrayLetters, trigger}){
     const [checked, setChecked]=useState([])
     const [selected, setSelected]=useState(false)
+
+
+useEffect(()=>{
+    let resetArray=[]
+    if (trigger){
+        setChecked(resetArray)
+        setSelected(false)
+        console.log ("triggered")
+    }
+}, [trigger])
 
    const handleCheck = (e) => {
     
@@ -21,15 +31,6 @@ function Checkbox({arrayLetters, setArrayLetters}){
     };
    
    
-    // function handleChangeChecked(e){
-    //     do{
-    //     if(isChecked){
-    //        const personalityArray= [...personality].push(e.target.value)
-    //         setPersonality(personalityArray)
-    //     }}
-    //     while(personality.length<=3);
-    //  console.log(personality)   
-    // }
 
 // add a limit to only check 10 attributes
 

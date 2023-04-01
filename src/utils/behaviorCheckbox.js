@@ -68,7 +68,7 @@
     {label : "Loyal",
     value: "G"},
 
-    {label : "ESomeone who avoids confrontation",
+    {label : "Someone who avoids confrontation",
     value: "G"},
     
  ]

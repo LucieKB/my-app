@@ -17,6 +17,49 @@
       "lastName": "Matter ",
       "personalityType": "G",
       "id": 3
+    },
+    {
+      "firstName": "Lucie",
+      "lastName": "Kayser-Bril ",
+      "personalityType": "G",
+      "id": 4
+    },
+    {
+      "firstName": "Lucie",
+      "lastName": "Kayser-Bril ",
+      "personalityType": "G",
+      "id": 5
+    },
+    {
+      "firstName": "Abbie",
+      "lastName": "Longfoot",
+      "personalityType": "B",
+      "id": 6
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Becker ",
+      "personalityType": "B",
+      "id": 7
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "personalityType": "B",
+      "id": 8
+    },
+    {
+      "firstName": "Brendan",
+      "lastName": "Johnson",
+      "personalityType": "O",
+      "id": 9
+    },
+    {
+      "firstName": "Brendan",
+      "lastName": "Johnson",
+      "personalityType": "O",
+      "id": 10
     }
-  ]
-}
+  ]}
+
+  
