@@ -15,29 +15,7 @@ function StudentPage(){
       .then((students)=> setStudents(students));
     },[]) 
 
-//     function studentList(){
-//     const [filteredStudents, setFilteredStudents]=useState(students)
-//    return (
-//       <li className = "student-card">
-//         {filteredStudents.map(student)=>{
-//     <StudentCard 
-//           const { name, experience, department, id } = employee
-//           return (
-//             <li key={id}>
-//               <div>
-//                 Name: <strong>{name}</strong>
-//               </div>
-//               <div>Experience: {experience} year(s)</div>
-//               <div>Department: {department}</div>
-//             </li>
-//           )
-//         })}
-//       </ul>
-//     </div>
 
-//    )
-
-// }
 
 return (
     <main>
