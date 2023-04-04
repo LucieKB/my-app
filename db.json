@@ -7,59 +7,46 @@
       "id": 1
     },
     {
-      "firstName": "Brie",
-      "lastName": "Darmon",
-      "personalityType": "B",
-      "id": 2
-    },
-    {
-      "firstName": "Agathe ",
-      "lastName": "Matter ",
-      "personalityType": "G",
+      "firstName": "Adele ",
+      "lastName": "Blansec",
+      "personalityType": "L",
       "id": 3
     },
     {
-      "firstName": "Lucie",
-      "lastName": "Kayser-Bril ",
-      "personalityType": "G",
+      "firstName": "Lucky",
+      "lastName": "Luke",
+      "personalityType": "O",
       "id": 4
     },
     {
-      "firstName": "Lucie",
-      "lastName": "Kayser-Bril ",
-      "personalityType": "G",
+      "firstName": "Benoit",
+      "lastName": "Brisefer",
+      "personalityType": "L",
       "id": 5
     },
     {
-      "firstName": "Abbie",
-      "lastName": "Longfoot",
-      "personalityType": "B",
+      "firstName": "Agathe",
+      "lastName": "Matter",
+      "personalityType": "P",
       "id": 6
     },
     {
-      "firstName": "Jane",
-      "lastName": "Becker ",
-      "personalityType": "B",
+      "firstName": "Emil",
+      "lastName": "Matter ",
+      "personalityType": "F",
       "id": 7
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "personalityType": "B",
+      "firstName": "Théodore",
+      "lastName": "Poussin",
+      "personalityType": "O",
       "id": 8
     },
     {
-      "firstName": "Brendan",
-      "lastName": "Johnson",
+      "firstName": "Alan",
+      "lastName": "Degas",
       "personalityType": "O",
       "id": 9
-    },
-    {
-      "firstName": "Brendan",
-      "lastName": "Johnson",
-      "personalityType": "O",
-      "id": 10
     }
-  ]}
-
-  
+  ]
+}

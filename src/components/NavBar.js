@@ -1,81 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const linkStyles = {
-    display: "inline",
-    width: "100px",
-    padding: "12px",
-    margin: "0 6px 6px",
-    textDecoration: "underline",
-    color: "darkgreen",
-  };
 
 
 
 function NavBar(){
     return (
         <nav>
-          {/* <NavLink to="/"
-          style={linkStyles}
-          activeStyle={{
-            color: "lawngreen",
-          }}
-         >
+          <NavLink exact to="/">
             Home
-          </NavLink> */}
-          <NavLink  to="/newForm"
-          style={linkStyles}
-          activeStyle={{
-            color: "lawngreen",
-          }}>
+          </NavLink> 
+          <NavLink  to="/newForm">
             Add a New Student
           </NavLink>
-          <NavLink  to="/studentList"
-          style={linkStyles}
-          activeStyle={{
-            color: "lawngreen",
-          }}>
+          <NavLink  to="/studentList">
             Students List
           </NavLink>
-          {/* <NavLink to="/groups"
-          style={linkStyles}
-          activeStyle={{
-            color: "lawngreen",
-          }}>
+          <NavLink to="/groups">
             Create Groups
-          </NavLink> */}
+          </NavLink> 
         </nav>
       );
     }
     
-    export default NavBar;
+export default NavBar;
 
-        {/* <NavLink to="/"
-          style={linkStyles}
-          activeStyle={{
-            color: "lawngreen",
-          }}
-         >
-            Home
-          </NavLink> */}
-          // <NavLink  to="/newForm"
-          // style={linkStyles}
-          // activeStyle={{
-          //   color: "lawngreen",
-          // }}>
-          //   Add a New Student
-          // </NavLink>
-          // <NavLink  to="/participants"
-          // style={linkStyles}
-          // activeStyle={{
-          //   color: "lawngreen",
-          // }}>
-          //   Students List
-          // </NavLink>
-          {/* <NavLink to="/groups"
-          style={linkStyles}
-          activeStyle={{
-            color: "lawngreen",
-          }}>
-            Create Groups
-          </NavLink> */}
+

@@ -1,11 +1,10 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 import Checkbox from "./Checkbox";
-import StudentCard from "./StudentCard"
 
 
-function NewStudentForm(){
-const [formData, setFormData] = useState({});
+
+function NewStudentForm({formData, setFormData}){
 const [arrayLetters, setArrayLetters]=useState([])
 const [trigger, setTrigger]=useState(0);
 const history = useHistory();
@@ -54,13 +53,6 @@ setFormData({
 
 setTrigger((trigger) => trigger+1)
 }
- 
-
-
-
-  
-
-    
 
   return (
     <section>
@@ -88,7 +80,7 @@ setTrigger((trigger) => trigger+1)
       <br />
       <button type="submit">Submit my info</button>
 
-      {/* <StudentCard formData={formData}/> */}
+     
     </form>
     </section>
   );

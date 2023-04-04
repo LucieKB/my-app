@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.animal-image {
+width: 10%;
+
+}
+
+nav {
+  background-color: rgb(230, 158, 58);
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.25rem;
+  margin: 1rem;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: rgb(10, 103, 24);
+  border-bottom: 2px solid rgb(10, 103, 24);
+  transition: 0.1s;
+}
+
+nav a:hover,
+nav a:active {
+  color: rgb(53, 202, 75);
+  border-bottom: 2px solid rgb(53, 202, 75);
+}
+
+nav a.active {
+  color: white;
+  border-bottom: white;
+}

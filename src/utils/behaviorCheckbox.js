@@ -1,15 +1,15 @@
  export const behavior=[
     {label : "A perfectionist",
-    value: "B"},
+    value: "F"},
 
     {label : "Determined",
     value: "L"},
 
     {label : "Someone who enjoys routine",
-    value: "G"},
+    value: "P"},
 
     {label : "Calm, even-keel",
-    value: "G"},
+    value: "P"},
 
     {label : "A risk-taker",
     value: "O"},
@@ -18,10 +18,10 @@
     value: "O"},
 
     {label : "Accurate and precise",
-    value: "B"},
+    value: "F"},
 
     {label : "Someone who likes instructions",
-    value: "B"},
+    value: "F"},
 
     {label : "Competitive",
     value: "L"},
@@ -30,7 +30,7 @@
     value: "L"},
 
     {label : "A peace-maker",
-    value: "G"},
+    value: "P"},
 
     {label : "Spontaneous",
     value: "O"},
@@ -39,7 +39,7 @@
     value: "O"},
 
     {label : "Predictable",
-    value: "B"},
+    value: "F"},
 
     {label : "Bold",
     value: "L"},
@@ -48,10 +48,10 @@
     value: "L"},
 
     {label : "Someone who likes giving to others",
-    value: "G"},
+    value: "P"},
 
     {label : "Practical",
-    value: "B"},
+    value: "F"},
 
     {label : "Someone who likes variety and change",
     value: "O"},
@@ -63,12 +63,12 @@
     value: "O"},
 
     {label : "Conscientious",
-    value: "B"},
+    value: "F"},
 
     {label : "Loyal",
-    value: "G"},
+    value: "P"},
 
     {label : "Someone who avoids confrontation",
-    value: "G"},
+    value: "P"},
     
  ]
