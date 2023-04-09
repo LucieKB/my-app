@@ -56,6 +56,8 @@ setTrigger((trigger) => trigger+1)
 
   return (
     <section>
+      <br></br>
+      <h4> Write your first and last name in the boxes below:</h4>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -77,7 +79,8 @@ setTrigger((trigger) => trigger+1)
         <br />
       <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters} trigger={trigger}/>
       </div>
-      <br />
+  
+      <h4>Finally, click on the button below to find out which animal you are !</h4>
       <button type="submit">Submit my info</button>
 
      

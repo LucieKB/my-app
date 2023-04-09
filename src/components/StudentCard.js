@@ -28,12 +28,13 @@ function StudentCard({student, formData}){
    return (
     
    <div>
-            <li className="names">
-                  {student.firstName} {student.lastName}
-                  <h3> Your Personality type :</h3>
-                            <img className="animal-image"
-                            src={animalToDisplay.image} alt={animalToDisplay.name}/>
-            </li>
+    
+{/* //             <li className="names">
+//                   {student.firstName} {student.lastName}
+//                   <h3> Your Personality type :</h3>
+//                             <img className="animal-image"
+//                             src={animalToDisplay.image} alt={animalToDisplay.name}/>
+//             </li> */}
         </div>               
             )
 }

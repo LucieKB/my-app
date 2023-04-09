@@ -1,13 +1,18 @@
 import React, {useState, useEffect} from "react";
 import StudentCard from "./StudentCard"
 import StudentGroups from "./StudentGroups";
+import "./StudentList.css" 
 
 
 function StudentList({students, formData}){
-  const [group, setGroup] = useState([])
+  const [lions, setLions] = useState([])
+  const [otters, setOtters] = useState([])
+  const [pandas, setPandas] = useState([])
+  const [foxes, setFoxes] = useState([])
+  const [listOfGroups, setListOfGroups] = useState([])
 
   useEffect(()=>{
-  const lions = students.filter(isLion);
+  setLions(students.filter(isLion))
   function isLion(student) {
     if (student.personalityType === "L"){
       return student
@@ -18,7 +23,7 @@ function StudentList({students, formData}){
   console.log(randomIndexL)
   
 
-  const otters = students.filter(isOtter);
+  setOtters(students.filter(isOtter))
   function isOtter(student) {
     if (student.personalityType === "O"){
       return student
@@ -29,7 +34,7 @@ function StudentList({students, formData}){
   console.log(randomIndexO)
   
 
-  const pandas = students.filter(isPanda);
+  setPandas (students.filter(isPanda));
   function isPanda(student) {
     if (student.personalityType === "P"){
       return student
@@ -40,44 +45,87 @@ function StudentList({students, formData}){
   console.log(randomIndexP)
   
 
-  const fox = students.filter(isFox);
+  setFoxes (students.filter(isFox));
   function isFox(student) {
     if (student.personalityType === "F"){
       return student
     }
   }
-  console.log(fox)
-  let randomIndexF= fox[Math.floor(Math.random()*fox.length)];
+  console.log(foxes)
+  let randomIndexF= foxes[Math.floor(Math.random()*foxes.length)];
   console.log(randomIndexF)
   
-  setGroup([randomIndexL, randomIndexP, randomIndexF, randomIndexO])
+  // setGroup([randomIndexL, randomIndexP, randomIndexF, randomIndexO])
   
 }, [ ,formData])
 
-function handleClickGroups(){
-  const studentGroup = group.map((student, index)=>{
-    return <StudentGroups key={index} {...student} />;
-  });
-  
-  return (
-    <div>
-    <h1>Here are your groups for today's project !</h1>
-    {studentGroup}
-   </div> 
-  ) 
-}
+// function handleClickGroups(){
+//   console.log("clicked")
+ 
+//   return (
+//     group.map((oneGroup)=>{
+//       return(
+//           <StudentGroups oneGroup={oneGroup} />)}
+          
+// ))}
+// console.log(group)
+
+
+// return (
+//   group.map((thatGroup, index)=>{
+//     return ( 
+//     <StudentGroups key={index} name={thatGroup.firstName} lastName={thatGroup.lastName}/>)
+//   })
 
 return(
     <div className="studentList">
-       <h2> List of Students :</h2>
-        {students.map((student)=>{
+      <div id="lions" className="studentTable">
+        <h1>Lions</h1>
+        <ul>
+        {lions.length>0 && (
+          lions.map((lion)=>{
           return(
-            <StudentCard key={student.id} student={student} formData={formData}/>
-        );
-        } 
-        )} 
-       
-       <button onClick={handleClickGroups} > Create my Groups !</button>  
+            <li key={lion.id}>
+              {lion.firstName}
+            </li>
+          )}))}
+        </ul>
+      </div>
+      <div id="otters" className="studentTable">
+      <h1>Otters</h1>
+        <ul>
+        {otters.length>0 && (
+          otters.map((otter)=>{
+          return(
+            <li key={otter.id}>
+              {otter.firstName}
+            </li>
+          )}))}
+        </ul>
+      </div>
+      <div id="pandas" className="studentTable">
+      <h1>Pandas</h1>
+        <ul>
+        {pandas.length>0 && (
+          pandas.map((panda)=>{
+          return(
+            <li key={panda.id}>
+              {panda.firstName}
+            </li>
+          )}))}
+        </ul>
+      </div>
+      <div id="fox" className="studentTable">
+      <h1>Foxes</h1>
+        <ul>
+        {foxes.length>0 && (
+          foxes.map((fox)=>{
+          return(
+            <li key={fox.id}>
+              {fox.firstName}
+            </li>
+          )}))}
+        </ul></div> 
     </div>
 );
 }
@@ -85,3 +133,13 @@ return(
 export default StudentList;
 
 // fName={student.firstName} lName={student.lastName}
+
+{/* <h2> List of Students :</h2>
+{students.map((student)=>{
+  return(
+    <StudentCard key={student.id} student={student} formData={formData}/>
+);
+} 
+)} 
+
+<button onClick={handleClickGroups} > Create my Groups !</button>   */}

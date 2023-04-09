@@ -1,14 +1,18 @@
 import React from "react";
 
-function StudentGroups(props){
+function StudentGroups(oneGroup){
   
-        
+    
      
 
 return(
-    <div>
-        
-    </div>
+    
+        <div>
+    <h1>Here are your groups for today's project !</h1>
+    {oneGroup}
+   </div> 
+   
+   
 )
       
 }
