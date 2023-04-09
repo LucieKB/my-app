@@ -5,7 +5,7 @@ import StudentList from "./StudentList"
 import StudentGroups from "./StudentGroups"
 import Checkbox from "./Checkbox"
 
-function StudentPage(){
+function StudentPage({group, setGroup}){
     const [students, setStudents]=useState([])
     const [formData, setFormData] = useState({});
 
@@ -24,7 +24,7 @@ return (
         <NewStudentForm students={students} setStudents={setStudents} formData={formData} setFormData={setFormData}/>
       </Route>
       <Route path = "/studentList">
-        <StudentList students={students} setStudents={setStudents} formData={formData} setFormData={setFormData}/>
+        <StudentList students={students} setStudents={setStudents} formData={formData} setFormData={setFormData} group={group} setGroup={setGroup}/>
       </Route>
       <Route path = "/studentgroups">
         <StudentGroups students={students} setStudents={setStudents}/>

@@ -55,17 +55,16 @@ function StudentList({students, formData}){
 }, [ ,formData])
 
 function handleClickGroups(){
-  const studentGroup = group.map((student)=>
-    <StudentGroups key={student.id} fName={student.firstName} lName={student.lastName}/>
-  )
+  const studentGroup = group.map((student, index)=>{
+    return <StudentGroups key={index} {...student} />;
+  });
   
   return (
     <div>
     <h1>Here are your groups for today's project !</h1>
     {studentGroup}
    </div> 
-  )
-  
+  ) 
 }
 
 return(
@@ -78,36 +77,11 @@ return(
         } 
         )} 
        
-       <button onClick={handleClickGroups} > Make my Groups !</button>  
+       <button onClick={handleClickGroups} > Create my Groups !</button>  
     </div>
 );
 }
 
 export default StudentList;
 
-// useEffect(() => {
-//   let oneLion = ((lion)=> {
-//     let randomIndexL= Math.floor(Math.random()*lion.length);
-//     oneLion = lion[randomIndexL] 
-//   }
-//   )
-//   let oneOtter = ((otter)=> {
-//     let randomIndexL= Math.floor(Math.random()*otter.length)
-//     oneOtter = otter[randomIndexL]
-//   }
-//   )
-//   let onePanda = ((panda)=> {
-//     let randomIndexL= Math.floor(Math.random()*panda.length)
-//     onePanda = panda[randomIndexL] 
-//     console.log(onePanda)
-//   }
-//   )
-
-//   let oneFox = ((fox)=> {
-//     let randomIndexL= Math.floor(Math.random()*fox.length)
-//     oneFox = fox[randomIndexL]
-//   }
-//   )
-
-// console.log(oneLion) 
-// },[])
+// fName={student.firstName} lName={student.lastName}

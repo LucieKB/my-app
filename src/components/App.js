@@ -1,21 +1,16 @@
-import React, {useState, useEffect} from "react";
-import { Route, Switch } from "react-router-dom";
+import React, {useState} from "react";
 import Header from "./Header"
 import NavBar from "./NavBar"
-import NewStudentForm from "./NewStudentForm"
-import StudentList from "./StudentList"
-import StudentGroups from "./StudentGroups"
-import Checkbox from "./Checkbox"
 import StudentPage from "./StudentPage";
 
 function App() {
-
+  const [group, setGroup] = useState([])
 
   return (
     <div>
       <Header />
       <NavBar />
-      <StudentPage />
+      <StudentPage group={group} setGroup={setGroup}/>
     </div>
   );
 }

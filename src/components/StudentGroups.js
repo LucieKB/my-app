@@ -1,6 +1,6 @@
 import React from "react";
 
-function StudentGroups({fName, lName}){
+function StudentGroups(props){
   
         
      
