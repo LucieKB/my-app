@@ -16,9 +16,6 @@ function NavBar(){
           <NavLink  to="/studentList">
             Students List
           </NavLink>
-          <NavLink to="/studentGroups">
-            My Groups
-          </NavLink> 
         </nav>
       );
     }

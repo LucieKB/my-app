@@ -23,7 +23,7 @@ return(
         <article>
             <h2> Why use the Grouping Tool ?</h2>
         <p>
-            When it comes to working in groups in a classroom, most teacher know that grouping the students might be the biggest challenge.
+            When it comes to working in groups in a classroom, most teachers know that grouping the students might be the biggest challenge.
             So how can we make sure that with all the different temperament profiles in a classroom, the groups we make will work well together?
             
             By using the Grouping Tool, an app developed based on Dr. Gary Smalley and Dr. John Trent's studies. 

@@ -9,7 +9,7 @@ function StudentList({students, formData}){
   const [otters, setOtters] = useState([])
   const [pandas, setPandas] = useState([])
   const [foxes, setFoxes] = useState([])
-  const [listOfGroups, setListOfGroups] = useState([])
+  
 
   useEffect(()=>{
   setLions(students.filter(isLion))
@@ -86,7 +86,7 @@ return(
           lions.map((lion)=>{
           return(
             <li key={lion.id}>
-              {lion.firstName}
+              {lion.firstName} {lion.lastName}
             </li>
           )}))}
         </ul>
@@ -98,7 +98,7 @@ return(
           otters.map((otter)=>{
           return(
             <li key={otter.id}>
-              {otter.firstName}
+              {otter.firstName} {otter.lastName}
             </li>
           )}))}
         </ul>
@@ -110,7 +110,7 @@ return(
           pandas.map((panda)=>{
           return(
             <li key={panda.id}>
-              {panda.firstName}
+              {panda.firstName}  {panda.lastName}
             </li>
           )}))}
         </ul>
@@ -122,7 +122,7 @@ return(
           foxes.map((fox)=>{
           return(
             <li key={fox.id}>
-              {fox.firstName}
+              {fox.firstName}  {fox.lastName}
             </li>
           )}))}
         </ul></div> 

@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 import NewStudentForm from "./NewStudentForm";
 import StudentList from "./StudentList"
-import StudentGroups from "./StudentGroups"
+import StudentCard from "./StudentCard"
 import Checkbox from "./Checkbox"
 import Home from "./Home"
 
-function StudentPage({group, setGroup}){
+function StudentPage(){
     const [students, setStudents]=useState([])
     const [formData, setFormData] = useState({});
 
@@ -25,10 +25,10 @@ return (
         <NewStudentForm students={students} setStudents={setStudents} formData={formData} setFormData={setFormData}/>
       </Route>
       <Route path = "/studentList">
-        <StudentList students={students} setStudents={setStudents} formData={formData} setFormData={setFormData} group={group} setGroup={setGroup}/>
+        <StudentList students={students} setStudents={setStudents} formData={formData} setFormData={setFormData} />
       </Route>
-      <Route path = "/studentGroups">
-        <StudentGroups students={students} setStudents={setStudents}/>
+      <Route path = "studentList/id">
+        <StudentCard students={students} formData={formData}/>
       </Route>
       <Route path = "/questions">
         <Checkbox />
