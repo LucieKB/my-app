@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import StudentCard from "./StudentCard"
-import StudentGroups from "./StudentGroups";
 import "./StudentList.css" 
 
 
@@ -59,23 +58,13 @@ function StudentList({students, formData}){
   
 }, [ ,formData])
 
-// function handleClickGroups(){
-//   console.log("clicked")
- 
-//   return (
-//     group.map((oneGroup)=>{
-//       return(
-//           <StudentGroups oneGroup={oneGroup} />)}
-          
-// ))}
-// console.log(group)
-
-
-// return (
-//   group.map((thatGroup, index)=>{
-//     return ( 
-//     <StudentGroups key={index} name={thatGroup.firstName} lastName={thatGroup.lastName}/>)
-//   })
+const studentcard = () => {
+  console.log("clicked")
+    students.map((student)=>{
+              return(
+                <StudentCard key={student.id} student={student} formData={formData}/>
+  )}
+    )}
 
 return(
     <div className="studentList">
@@ -85,8 +74,10 @@ return(
         {lions.length>0 && (
           lions.map((lion)=>{
           return(
-            <li key={lion.id}>
+            <li>
+            <button key={lion.id} onClick={studentcard}>
               {lion.firstName} {lion.lastName}
+            </button>
             </li>
           )}))}
         </ul>
@@ -143,3 +134,16 @@ export default StudentList;
 )} 
 
 <button onClick={handleClickGroups} > Create my Groups !</button>   */}
+
+// return(
+//   <div className="studentList">
+//      <h2> List of Students :</h2>
+//       {students.map((student)=>{
+//         return(
+//           <StudentCard key={student.id} student={student} formData={formData}/>
+
+//       } 
+//       )} 
+//      <button > Make my Groups !</button>  
+//   </div>
+// );
