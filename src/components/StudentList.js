@@ -10,6 +10,9 @@ function StudentList({students, formData}){
   const [pandas, setPandas] = useState([])
   const [foxes, setFoxes] = useState([])
   const [listOfGroups, setListOfGroups] = useState([])
+  const [checked, setChecked] = useState(false)
+  const [isDisabled, setIsDisabled]=useState(false)
+  const [selected, setSelected]=useState(false)
 
   useEffect(()=>{
   setLions(students.filter(isLion))
@@ -59,23 +62,30 @@ function StudentList({students, formData}){
   
 }, [ ,formData])
 
-// function handleClickGroups(){
-//   console.log("clicked")
- 
-//   return (
-//     group.map((oneGroup)=>{
-//       return(
-//           <StudentGroups oneGroup={oneGroup} />)}
-          
-// ))}
-// console.log(group)
+const onChange = () => {
+  setChecked(!checked);
+}
+
+ // let myGroup = [...checked];
+  //   if (e.target.checked){
+  //       myGroup = [...checked, e.target.value];
+  //   }else{myGroup.splice(checked.indexOf(e.target.value), 1);
+  //   }
+  //   setChecked(myGroup)
+
+  //   if (e.target.checked){
+  //       setSelected(true)
+  //   }
+  //   setListOfGroups(myGroup)
 
 
-// return (
-//   group.map((thatGroup, index)=>{
-//     return ( 
-//     <StudentGroups key={index} name={thatGroup.firstName} lastName={thatGroup.lastName}/>)
-//   })
+
+// useEffect((value)=>{
+
+//   if (listOfGroups.includes(value)){
+//       setIsDisabled(!isDisabled)
+//   }
+// }, [listOfGroups])
 
 return(
     <div className="studentList">
@@ -83,11 +93,22 @@ return(
         <h1>Lions</h1>
         <ul>
         {lions.length>0 && (
-          lions.map((lion)=>{
+          lions.map((lion, index)=>{
           return(
-            <li key={lion.id}>
-              {lion.firstName}
-            </li>
+            <div key={lion.id}>
+                <input
+                type="checkbox"
+                id={lion.id}
+                value={lion.firstName}
+                checked={selected[index]}
+                disabled = {isDisabled}
+                onChange={onChange}
+                />{lion.firstName} {lion.lastName}
+            </div>
+  
+            // <li key={lion.id}>
+            //   {lion.firstName}
+            // </li>
           )}))}
         </ul>
       </div>
@@ -132,14 +153,3 @@ return(
 
 export default StudentList;
 
-// fName={student.firstName} lName={student.lastName}
-
-{/* <h2> List of Students :</h2>
-{students.map((student)=>{
-  return(
-    <StudentCard key={student.id} student={student} formData={formData}/>
-);
-} 
-)} 
-
-<button onClick={handleClickGroups} > Create my Groups !</button>   */}

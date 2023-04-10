@@ -27,6 +27,7 @@ return (
       <Route path = "/studentList">
         <StudentList students={students} setStudents={setStudents} formData={formData} setFormData={setFormData} group={group} setGroup={setGroup}/>
       </Route>
+      {/* <Route path = "/studentList/id" */}
       <Route path = "/studentGroups">
         <StudentGroups students={students} setStudents={setStudents}/>
       </Route>
