@@ -9,7 +9,11 @@ function StudentList({students, formData}){
   const [otters, setOtters] = useState([])
   const [pandas, setPandas] = useState([])
   const [foxes, setFoxes] = useState([])
+  // const [student, setStudent] = useState ([])
   
+//   useEffect(()=>{
+//  setStudent(students.map((student)=> student.firstName, student.lastName, student.personalityType))
+//   }, [ , formData])
 
   useEffect(()=>{
   setLions(students.filter(isLion))
@@ -84,19 +88,24 @@ return(
         {lions.length>0 && (
           lions.map((lion)=>{
           return(
-            
+            <div>
               <Link to={`/studentList/${lion.id}`}>
-            <button key={lion.id}>
+            <button className = "lion-btn" >
               {lion.firstName} {lion.lastName}
             </button>
               </Link>
-            
+            </div>
           )}))}
         </ul>
       
-        <Route path={`/studentList/:lionId`}>
-                <StudentCard student={students.map((student)=>student)} formData={formData}/>        
-        </Route>
+        <li className="student-card">
+          <Route path={`/studentList/:lionId`}>
+          {students.map((student)=>{
+        if (student.personalityType === "L")
+            return (
+                <StudentCard key={student.id} student={student} formData={formData}/> )})}         
+       </Route> 
+       </li> 
       </div>
       <div id="otters" className="studentTable">
       <h1>Otters</h1>
