@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Link, Route} from "react-router-dom";
 import StudentCard from "./StudentCard"
 import "./StudentList.css" 
 
@@ -58,13 +59,22 @@ function StudentList({students, formData}){
   
 }, [ ,formData])
 
-const studentcard = () => {
-  console.log("clicked")
-    students.map((student)=>{
-              return(
-                <StudentCard key={student.id} student={student} formData={formData}/>
-  )}
-    )}
+// let studentCard=()=>{
+//   console.log(students)
+//   return(
+//     <div className="student-card">
+//       <h2>My student :</h2>
+//     {students.map((student)=>{
+//               return(
+//                 <StudentCard key={student.id} student={student} formData={formData}/>
+              
+//   )}
+//   )}
+//   </div>
+  
+//   )
+// }
+
 
 return(
     <div className="studentList">
@@ -74,13 +84,19 @@ return(
         {lions.length>0 && (
           lions.map((lion)=>{
           return(
-            <li>
-            <button key={lion.id} onClick={studentcard}>
+            
+              <Link to={`/studentList/${lion.id}`}>
+            <button key={lion.id}>
               {lion.firstName} {lion.lastName}
             </button>
-            </li>
+              </Link>
+            
           )}))}
         </ul>
+      
+        <Route path={`/studentList/:lionId`}>
+                <StudentCard student={students.map((student)=>student)} formData={formData}/>        
+        </Route>
       </div>
       <div id="otters" className="studentTable">
       <h1>Otters</h1>

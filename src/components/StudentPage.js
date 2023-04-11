@@ -27,9 +27,6 @@ return (
       <Route path = "/studentList">
         <StudentList students={students} setStudents={setStudents} formData={formData} setFormData={setFormData} />
       </Route>
-      <Route path = "studentList/id">
-        <StudentCard students={students} formData={formData}/>
-      </Route>
       <Route path = "/questions">
         <Checkbox />
       </Route>

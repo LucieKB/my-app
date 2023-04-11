@@ -29,10 +29,10 @@ function StudentCard({student, formData}){
     
    <div>
     
-//             <p className="names">
-//                   {student.firstName} {student.lastName}
-//                   <h3> Student Personality type :</h3>
-//                             <img className="animal-image"
+            <p className="names">
+                  {student.firstName} {student.lastName}
+                 <h3> Student Personality type :</h3>
+                            <img className="animal-image"
                             src={animalToDisplay.image} alt={animalToDisplay.name}/>
                     <h3> Description of that personality type in a group : </h3> 
                     {animalToDisplay.description}      
