@@ -30,15 +30,15 @@ function StudentCard({student, formData}){
    <div>
     
             <p className="names">
-                  {student.firstName} {student.lastName}
-                 <h3> Student Personality type :</h3>
+                  <h4><u>{student.firstName} {student.lastName}</u></h4>
+                 <h5><u> {student.firstName}'s Personality Type :</u></h5>
                             <img className="animal-image"
                             src={animalToDisplay.image} alt={animalToDisplay.name}/>
-                    <h3> Description of that personality type in a group : </h3> 
+                    <h5><u> Description of {student.firstName}'s Personality in a Group : </u></h5> 
                     {animalToDisplay.description}      
-                    <h3> Student strengths :</h3>
+                    <h5><u> {student.firstName}'s strengths :</u></h5>
                     {animalToDisplay.strengths}
-                    <h3> Student weaknesses :</h3>
+                    <h5><u> {student.firstName}'s weaknesses :</u></h5>
                     {animalToDisplay.weaknesses}
             </p>
         </div>               

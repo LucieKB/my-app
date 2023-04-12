@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react"
 import {behavior} from "../utils/behaviorCheckbox.js"
 
-function Checkbox({arrayLetters, setArrayLetters, trigger}){
+function Checkbox({arrayLetters, setArrayLetters, trigger, answers, setAnswers}){
     const [checked, setChecked]=useState([])
     const [selected, setSelected]=useState(false)
     const [isDisabled, setIsDisabled]=useState(false)
+    
 
 useEffect(()=>{
     let resetArray=[]
@@ -28,6 +29,10 @@ useEffect(()=>{
         setSelected(true)
     }
     setArrayLetters(arrayLetters)
+
+    let myanswers=[...answers, e.target.name];
+    setAnswers(myanswers)
+    console.log (e.target.name)
     };
 
 useEffect(()=>{

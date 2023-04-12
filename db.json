@@ -47,6 +47,30 @@
       "lastName": "Degas",
       "personalityType": "O",
       "id": 9
+    },
+    {
+      "firstName": "Largo",
+      "lastName": "Winch",
+      "personalityType": "L",
+      "id": 10
+    },
+    {
+      "firstName": "Spirou",
+      "lastName": "LePetit",
+      "personalityType": "F",
+      "id": 11
+    },
+    {
+      "firstName": "Spip",
+      "lastName": "L'écureuil",
+      "personalityType": "P",
+      "id": 12
+    },
+    {
+      "firstName": "Ducobu",
+      "lastName": "Élève",
+      "personalityType": "P",
+      "id": 13
     }
   ]
 }

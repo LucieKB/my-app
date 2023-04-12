@@ -16,7 +16,7 @@
 }
 
 .lion-btn{
-    background-color: orange;
+    background-color: rgb(206, 177, 82);
     color: white;
     text-align: center;
     font-size: 16px;
@@ -27,11 +27,74 @@
 }
 
 .lion-btn:hover{
-    background-color: rgb(237, 201, 109);
+    background-color: rgb(224, 201, 125);
 }
 
 .lion-btn:active{
+    background-color: rgb(173, 143, 44);
+    box-shadow: 2px rgb(200, 200, 206);
+    transform: translateY(2px);
+}
+
+.fox-btn{
+    background-color: orange;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
+    border-color: black;
+    width : 100%;
+    margin-block: 10px;
+}
+
+.fox-btn:hover{
+    background-color: rgb(237, 201, 109);
+}
+
+.fox-btn:active{
     background-color: darkorange;
+    box-shadow: 2px rgb(200, 200, 206);
+    transform: translateY(2px);
+}
+
+.otter-btn{
+    background-color: rgb(64, 179, 224);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
+    border-color: black;
+    width : 100%;
+    margin-block: 10px;
+}
+
+.otter-btn:hover{
+    background-color: rgb(128, 201, 229);
+}
+
+.otter-btn:active{
+    background-color: rgb(29, 122, 159);
+    box-shadow: 2px rgb(200, 200, 206);
+    transform: translateY(2px);
+}
+
+.panda-btn{
+    background-color: rgb(32, 30, 30);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
+    border-color: black;
+    width : 100%;
+    margin-block: 10px;
+}
+
+.panda-btn:hover{
+    background-color: rgb(79, 77, 77);
+}
+
+.panda-btn:active{
+    background-color: black;
     box-shadow: 2px rgb(200, 200, 206);
     transform: translateY(2px);
 }

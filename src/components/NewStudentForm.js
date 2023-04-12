@@ -6,6 +6,7 @@ import Checkbox from "./Checkbox";
 
 function NewStudentForm({formData, setFormData}){
 const [arrayLetters, setArrayLetters]=useState([])
+const [answers, setAnswers]=useState([])
 const [trigger, setTrigger]=useState(0);
 const history = useHistory();
 
@@ -18,12 +19,13 @@ function handleChange(event) {
     console.log(formData)
 }
 
+function resetHistory()
+{history.push(`/studentList/`)}
+
 function handleSubmit(e){
   e.preventDefault()
-  console.log(arrayLetters)
   const counts = {};
   arrayLetters.forEach(function(x) {counts[x] = (counts[x] || 0) + 1})
-  console.log (counts)
   const dominantLetter = Object.keys(counts).reduce(function(a,b){return counts[a]>counts[b]? a:b});
   formData.personality=dominantLetter;
   setFormData({...formData 
@@ -42,8 +44,7 @@ function handleSubmit(e){
   })
 })
   .then(r=>r.json())
-  .then (data => {history.push(`/studentList/`)
-})
+  .then (data => resetHistory(data))
 
 setFormData({
   firstName : "",
@@ -77,7 +78,7 @@ setTrigger((trigger) => trigger+1)
       />
       <div>
         <br />
-      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters} trigger={trigger}/>
+      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters} trigger={trigger} answers={answers} setAnswers={setAnswers}/>
       </div>
   
       <h4>Finally, click on the button below to find out which animal you are !</h4>
