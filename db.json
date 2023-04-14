@@ -71,6 +71,63 @@
       "lastName": "Élève",
       "personalityType": "P",
       "id": 13
+    },
+    {
+      "firstName": "Yoko",
+      "lastName": "Tsuno ",
+      "personalityType": "F",
+      "id": 14
+    },
+    {
+      "firstName": "Garfield",
+      "lastName": "Lechat",
+      "personalityType": "P",
+      "id": 15
+    },
+    {
+      "firstName": "Nelson",
+      "lastName": "Diablotin",
+      "personalityType": "O",
+      "id": 16
+    },
+    {
+      "firstName": "Marsu",
+      "lastName": "Pilami",
+      "personalityType": "O",
+      "id": 17
+    },
+    {
+      "firstName": "Pacôme ",
+      "lastName": "Champignac",
+      "personalityType": "F",
+      "id": 18
+    },
+    {
+      "firstName": "Olivier",
+      "lastName": "Génial",
+      "personalityType": "O",
+      "id": 19
+    },
+    {
+      "firstName": "Pierre",
+      "lastName": "Tombal",
+      "personalityType": "P",
+      "id": 20
+    },
+    {
+      "firstName": "Kid",
+      "lastName": "Paddle",
+      "personalityType": "F",
+      "answers": [
+        "Predictable",
+        "Bold",
+        "Persistent",
+        "Conscientious",
+        "Loyal",
+        "Someone who likes to talk",
+        "Accurate and precise"
+      ],
+      "id": 21
     }
   ]
 }

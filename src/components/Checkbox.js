@@ -14,13 +14,15 @@ useEffect(()=>{
         setSelected(false)
         console.log ("triggered")
     }
-}, [trigger])
+},[trigger])
 
    const handleCheck = (e) => {
-    
+
+
     let arrayLetters= [...checked];
     if (e.target.checked){
         arrayLetters = [...checked, e.target.value];
+
     }else{arrayLetters.splice(checked.indexOf(e.target.value), 1);
     }
     setChecked(arrayLetters)
@@ -29,10 +31,10 @@ useEffect(()=>{
         setSelected(true)
     }
     setArrayLetters(arrayLetters)
-
-    let myanswers=[...answers, e.target.name];
-    setAnswers(myanswers)
-    console.log (e.target.name)
+    
+    let myAnswers=[...answers, e.target.name];
+    setAnswers(myAnswers)
+    console.log("answers", myAnswers)
     };
 
 useEffect(()=>{

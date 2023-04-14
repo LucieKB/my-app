@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link, Route} from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
 import StudentCard from "./StudentCard"
 import "./StudentList.css" 
 
@@ -14,6 +14,7 @@ function StudentList({students, formData}){
 //   useEffect(()=>{
 //  setStudent(students.map((student)=> student.firstName, student.lastName, student.personalityType))
 //   }, [ , formData])
+
 
   useEffect(()=>{
   setLions(students.filter(isLion))
@@ -76,7 +77,7 @@ return(
         {lions.length>0 && (
           lions.map((lion)=>{
           return(
-            <div>
+            <div key={lion.id}>
               <Link to={`/studentList/${lion.id}`}>
             <button className = "lion-btn" >
               {lion.firstName} {lion.lastName}
@@ -87,13 +88,15 @@ return(
         </ul>
       
         <li className="student-card">
+          <Switch>
           <Route path={`/studentList/:lionId`}>
           {students.map((student)=>{
         if (student.personalityType === "L")
         // (student.id === lions.map((lion)=>lion.id))
             return (
                 <StudentCard key={student.id} student={student} formData={formData}/> )})}         
-       </Route> 
+       </Route>
+       </Switch> 
        </li> 
       </div>
 
@@ -103,7 +106,7 @@ return(
         {otters.length>0 && (
           otters.map((otter)=>{
           return(
-            <div>
+            <div key={otter.id}>
             <Link to={`/studentList/${otter.id}`}>
           <button className = "otter-btn" >
             {otter.firstName} {otter.lastName}
@@ -128,7 +131,7 @@ return(
         {pandas.length>0 && (
           pandas.map((panda)=>{
           return(
-            <div>
+            <div key={panda.id}>
             <Link to={`/studentList/${panda.id}`}>
           <button className = "panda-btn" >
             {panda.firstName} {panda.lastName}
@@ -153,7 +156,7 @@ return(
         {foxes.length>0 && (
           foxes.map((fox)=>{
           return(
-            <div>
+            <div key={fox.id}>
             <Link to={`/studentList/${fox.id}`}>
           <button className = "fox-btn" >
             {fox.firstName} {fox.lastName}
@@ -162,14 +165,14 @@ return(
           </div>
           )}))}
         </ul>
-        <li className="student-card">
+        <ul className="student-card">
           <Route path={`/studentList/:foxId`}>
           {students.map((student)=>{
         if (student.personalityType === "F")
             return (
                 <StudentCard key={student.id} student={student} formData={formData}/> )})}         
        </Route> 
-       </li> 
+       </ul> 
       </div>
   
  </div>       

@@ -3,56 +3,66 @@ import { useHistory } from "react-router-dom";
 import Checkbox from "./Checkbox";
 
 
-
-function NewStudentForm({formData, setFormData}){
+function NewStudentForm({students, setStudents}){
 const [arrayLetters, setArrayLetters]=useState([])
 const [answers, setAnswers]=useState([])
 const [trigger, setTrigger]=useState(0);
 const history = useHistory();
+const [formData, setFormData] = useState({
+  firstName:"",
+  lastName:"",
+  personalityType:"",
+  answers:[]
+});
 
 function handleChange(event) {
   setFormData({
     ...formData,
     [event.target.name]: event.target.value,
   });
-
     console.log(formData)
 }
 
 function resetHistory()
-{history.push(`/studentList/`)}
+{history.push(`/studentList`)}
 
 function handleSubmit(e){
   e.preventDefault()
+  formData.answers=answers;
   const counts = {};
   arrayLetters.forEach(function(x) {counts[x] = (counts[x] || 0) + 1})
   const dominantLetter = Object.keys(counts).reduce(function(a,b){return counts[a]>counts[b]? a:b});
-  formData.personality=dominantLetter;
+  formData.personalityType=dominantLetter;
   setFormData({...formData 
   })
-  console.log(formData)
+
 
   fetch ("http://localhost:3001/students",{
     method:"POST",
     headers:{
       "Content-Type": "application/json" 
     },
-    body: JSON.stringify({
-      firstName : formData.firstName,
-      lastName : formData.lastName,
-      personalityType : formData.personality
-  })
+    body: JSON.stringify(formData)
 })
   .then(r=>r.json())
-  .then (data => resetHistory(data))
+  .then (newStudent=>handleAddStudent(newStudent));
 
+
+  
 setFormData({
   firstName : "",
   lastName : "",
-  personalityType : ""
-})
+  personalityType : "",
+  answers: []
+});
 
-setTrigger((trigger) => trigger+1)
+resetHistory(); 
+
+setTrigger((trigger) => trigger+1);
+}
+
+function handleAddStudent (newStudent){
+  setStudents([...students, newStudent])
 }
 
   return (
