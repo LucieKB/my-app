@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Checkbox from "./Checkbox";
 
 
-function NewStudentForm({students, setStudents}){
+function NewStudentForm({students, setStudents, onAddStudent}){
 const [arrayLetters, setArrayLetters]=useState([])
 const [answers, setAnswers]=useState([])
 const [trigger, setTrigger]=useState(0);
@@ -45,7 +45,7 @@ function handleSubmit(e){
     body: JSON.stringify(formData)
 })
   .then(r=>r.json())
-  .then (newStudent=>handleAddStudent(newStudent));
+  .then (newStudent=>onAddStudent(newStudent));
 
 
   
@@ -61,9 +61,6 @@ resetHistory();
 setTrigger((trigger) => trigger+1);
 }
 
-function handleAddStudent (newStudent){
-  setStudents([...students, newStudent])
-}
 
   return (
     <section>

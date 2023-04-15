@@ -16,13 +16,16 @@ function StudentPage(){
       .then((students)=> setStudents(students));
     }, []) 
 
-
+function handleAddStudent (newStudent){
+  console.log("Add student", newStudent)
+      setStudents([...students, newStudent])
+    }
 
 return (
     <main>
        <Switch>
       <Route path = "/newForm">
-        <NewStudentForm students={students} setStudents={setStudents} />
+        <NewStudentForm students={students} setStudents={setStudents} onAddStudent={handleAddStudent}/>
       </Route>
       <Route path = "/studentList">
         <StudentList students={students} setStudents={setStudents} />

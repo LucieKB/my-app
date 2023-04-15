@@ -25,12 +25,6 @@
       "id": 5
     },
     {
-      "firstName": "Agathe",
-      "lastName": "Matter",
-      "personalityType": "P",
-      "id": 6
-    },
-    {
       "firstName": "Emil",
       "lastName": "Matter ",
       "personalityType": "F",
@@ -128,6 +122,51 @@
         "Accurate and precise"
       ],
       "id": 21
+    },
+    {
+      "firstName": "Lucas",
+      "lastName": "Leballon",
+      "personalityType": "O",
+      "answers": [
+        "A perfectionist",
+        "Determined",
+        "Someone who enjoys routine",
+        "Calm, even-keel",
+        "A risk-taker",
+        "Someone who likes to talk",
+        "Accurate and precise"
+      ],
+      "id": 22
+    },
+    {
+      "firstName": "Amanda",
+      "lastName": "Dupre",
+      "personalityType": "F",
+      "answers": [
+        "A risk-taker",
+        "Someone who likes instructions",
+        "A good problem-solver",
+        "Spontaneous",
+        "Predictable",
+        "Someone who likes giving to others",
+        "Practical"
+      ],
+      "id": 23
+    },
+    {
+      "firstName": "Agathe",
+      "lastName": "Matter",
+      "personalityType": "P",
+      "answers": [
+        "Determined",
+        "Someone who enjoys routine",
+        "Calm, even-keel",
+        "Someone who likes giving to others",
+        "Persistent",
+        "Enthusiastic",
+        "Competitive"
+      ],
+      "id": 24
     }
   ]
 }

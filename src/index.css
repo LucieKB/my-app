@@ -13,7 +13,7 @@ code {
 }
 
 .animal-image {
-width: 50%;
+width: 25%;
 
 }
 
@@ -45,4 +45,20 @@ nav a.active {
 
 .images-Home {
   width:10%
+}
+
+.student-card {
+  display:block;
+  border:3px rgba(230, 158, 58, 0.72);
+  width:auto;
+  height:auto;
+  
+}
+
+.student-card1{
+  display:block;
+  text-align : left;
+  border:3px rgba(230, 158, 58, 0.72);
+  width:auto;
+  height:auto;
 }
