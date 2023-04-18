@@ -25,12 +25,6 @@
       "id": 5
     },
     {
-      "firstName": "Emil",
-      "lastName": "Matter ",
-      "personalityType": "F",
-      "id": 7
-    },
-    {
       "firstName": "Théodore",
       "lastName": "Poussin",
       "personalityType": "O",
@@ -167,6 +161,53 @@
         "Competitive"
       ],
       "id": 24
+    },
+    {
+      "firstName": "Emil",
+      "lastName": "Matter",
+      "personalityType": "L",
+      "answers": [
+        "Competitive",
+        "A good problem-solver",
+        "Determined",
+        "Accurate and precise",
+        "Someone who likes giving to others",
+        "Enthusiastic",
+        "Someone who likes variety and change"
+      ],
+      "id": 25
+    },
+    {
+      "firstName": "Lucie",
+      "lastName": "Kayser-Bril",
+      "personalityType": "L",
+      "answers": [
+        "A risk-taker",
+        "Competitive",
+        "A good problem-solver",
+        "Someone who likes giving to others",
+        "Someone who likes variety and change",
+        "Loyal",
+        "A decision-maker"
+      ],
+      "id": 26
+    },
+    {
+      "firstName": "Sylvain",
+      "lastName": "Matter",
+      "personalityType": "P",
+      "answers": [
+        "Predictable",
+        "Practical",
+        "Loyal",
+        "Someone who avoids confrontation",
+        "Calm, even-keel",
+        "Predictable",
+        "Someone who likes giving to others",
+        "Accurate and precise",
+        "A perfectionist"
+      ],
+      "id": 27
     }
   ]
 }

@@ -29,7 +29,10 @@ if(student.answers === undefined){
    return ( 
    <>
    <div className = "student-card">
-   <h2><u>{student.firstName} {student.lastName}</u></h2>
+    
+  <div style={{display: "flex", flexDirection: "row"}}> <h2><u>{student.firstName} {student.lastName}</u></h2>
+  <button>X</button>
+  </div>
   <h4><u> {student.firstName}'s Personality Type :</u></h4>
              <img className="animal-image"
              src={animalToDisplay.image} alt={animalToDisplay.name}/>   

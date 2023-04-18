@@ -1,7 +1,7 @@
 import React from "react";
 import StudentCard from "./StudentCard";
 
-function Otters({students, studentClicked, setStudentClicked}){
+function Otters({students, onClickGroup, setStudentClicked}){
 
     const otters = students.filter((student)=>student.personalityType === "O")
 
@@ -12,16 +12,23 @@ function Otters({students, studentClicked, setStudentClicked}){
         {otters.length>0 && (
           otters.map((otter)=>{
           return(
+            <>
             <div key={otter.id} className="studentListBtn">
             <button 
+            id={otter.id}
             className = "otter-btn" 
             onClick={()=>{setStudentClicked(otter.id)}}
             >
               {otter.firstName} {otter.lastName}
             </button>
-          </div>)}))} 
-        </ul>      
-              </div>  
+        
+        <button id={otter.id} onClick={onClickGroup}>X</button>
+          
+            </div>   
+            </>
+          )}))}
+          </ul> 
+          </div>  
     )
 
 }

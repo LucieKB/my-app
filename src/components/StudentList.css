@@ -1,3 +1,16 @@
+.TitleList{
+    display:flex;
+    flex-direction: row;
+}
+
+.Groups{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    text-align:justify;
+    padding-right: 25px;
+}
+
 .studentListBtn{
     display:flex;
     flex-direction: row;
@@ -127,8 +140,3 @@ background-clip: border-box;
     transform: translateY(2px);
 }
 
-.x-Btn{
-    visibility: hidden;
-    width: 100%;
-    height:100%
-}
