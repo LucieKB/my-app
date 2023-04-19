@@ -7,6 +7,7 @@ import Home from "./Home"
 
 function StudentPage(){
     const [students, setStudents]=useState([])
+    const [newGroups, setNewGoups]= useState([])
    
     
 
@@ -21,6 +22,11 @@ function handleAddStudent (newStudent){
       setStudents([...students, newStudent])
     }
 
+function handleAddNewGroup (newGroup){
+  console.log("Add new Group", newGroup)
+  setNewGoups([...newGroups, newGroup])
+}
+
 return (
     <main>
        <Switch>
@@ -28,7 +34,7 @@ return (
         <NewStudentForm students={students} setStudents={setStudents} onAddStudent={handleAddStudent}/>
       </Route>
       <Route path = "/studentList">
-        <StudentList students={students} setStudents={setStudents} />
+        <StudentList students={students} setStudents={setStudents} onAddNewGroup={handleAddNewGroup} newGroups={newGroups}/>
       </Route>
       <Route path = "/questions">
         <Checkbox />

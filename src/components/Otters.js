@@ -1,5 +1,5 @@
 import React from "react";
-import StudentCard from "./StudentCard";
+
 
 function Otters({students, onClickGroup, setStudentClicked}){
 

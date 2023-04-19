@@ -1,17 +1,11 @@
 
-import React, {useState} from "react";
+import React from "react";
 
+function Foxes({students, onClickGroup, setStudentClicked}){
 
-
-
-function Foxes({students, setStudentClicked, onClickGroup}){
-
-const foxes = students.filter((student)=>student.personalityType === "F")
-
-
+    const foxes = students.filter((student)=>student.personalityType === "F")
 
     return(
-      
         <div id="foxes" className="studentTable">
         <h1>Foxes</h1>
         <ul>
@@ -28,12 +22,10 @@ const foxes = students.filter((student)=>student.personalityType === "F")
               {fox.firstName} {fox.lastName}
             </button>
          
-              <button key={fox.id} onClick={onClickGroup}>X</button>
+        <button id={fox.id} onClick={onClickGroup}>X</button>
             
             </div>
-          
-            
-            
+         
           </>
         )}))}
         </ul> 
@@ -45,8 +37,3 @@ const foxes = students.filter((student)=>student.personalityType === "F")
 
 export default Foxes;
 
-// {isVisible === true? (
-//   <button id={fox.id} onClick={onClickGroup(fox.id)}>X</button>
-// ):(
-//   null
-// )} 
