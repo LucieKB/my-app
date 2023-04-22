@@ -30,8 +30,8 @@ if(student.answers === undefined){
    <>
    <div className = "student-card">
     
-  <div style={{display: "flex", flexDirection: "row"}}> <h2><u>{student.firstName} {student.lastName}</u></h2>
-  <button>X</button>
+  <div style={{textAlign : "center"}}> <h2><u>{student.firstName} {student.lastName}</u></h2>
+ 
   </div>
   <h4><u> {student.firstName}'s Personality Type :</u></h4>
              <img className="animal-image"

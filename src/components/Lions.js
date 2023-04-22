@@ -1,9 +1,13 @@
 import React from "react";
-import StudentCard from "./StudentCard";
+import DeleteButton from "./DeleteButton";
 
-function Lions({students, onClickGroup, setStudentClicked}){
+function Lions({students, setStudentClicked, setStudents, deleteOneStudent}){
+ 
+
+
 
     const lions = students.filter((student)=>student.personalityType === "L")
+   
 
     return(
       <div id="Lions" className="studentTable">
@@ -12,7 +16,7 @@ function Lions({students, onClickGroup, setStudentClicked}){
       {lions.length>0 && (
         lions.map((lion)=>{
         return(
-          <>
+          
           <div key={lion.id} className="studentListBtn">
           <button 
           id={lion.id}
@@ -22,13 +26,13 @@ function Lions({students, onClickGroup, setStudentClicked}){
             {lion.firstName} {lion.lastName}
           </button>
        
-            <button id={lion.id} onClick={onClickGroup}>X</button>
+          <textarea className="group-area jc-center" maxLength="1" placeholder="Group #" ></textarea>
+          <div>
+          <DeleteButton key={lion.id} student={lion} setStudents={setStudents} deleteOneStudent={deleteOneStudent}/>
+          </div>
           
           </div>
         
-          
-          
-        </>
       )}))}
       </ul> 
       </div>  

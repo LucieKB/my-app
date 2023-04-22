@@ -1,12 +1,6 @@
 {
   "students": [
     {
-      "firstName": "John",
-      "lastName": "Smith ",
-      "personalityType": "L",
-      "id": 1
-    },
-    {
       "firstName": "Adele ",
       "lastName": "Blansec",
       "personalityType": "L",
@@ -49,12 +43,6 @@
       "id": 11
     },
     {
-      "firstName": "Spip",
-      "lastName": "L'écureuil",
-      "personalityType": "P",
-      "id": 12
-    },
-    {
       "firstName": "Ducobu",
       "lastName": "Élève",
       "personalityType": "P",
@@ -91,12 +79,6 @@
       "id": 18
     },
     {
-      "firstName": "Olivier",
-      "lastName": "Génial",
-      "personalityType": "O",
-      "id": 19
-    },
-    {
       "firstName": "Pierre",
       "lastName": "Tombal",
       "personalityType": "P",
@@ -116,21 +98,6 @@
         "Accurate and precise"
       ],
       "id": 21
-    },
-    {
-      "firstName": "Lucas",
-      "lastName": "Leballon",
-      "personalityType": "O",
-      "answers": [
-        "A perfectionist",
-        "Determined",
-        "Someone who enjoys routine",
-        "Calm, even-keel",
-        "A risk-taker",
-        "Someone who likes to talk",
-        "Accurate and precise"
-      ],
-      "id": 22
     },
     {
       "firstName": "Amanda",
@@ -178,21 +145,6 @@
       "id": 25
     },
     {
-      "firstName": "Lucie",
-      "lastName": "Kayser-Bril",
-      "personalityType": "L",
-      "answers": [
-        "A risk-taker",
-        "Competitive",
-        "A good problem-solver",
-        "Someone who likes giving to others",
-        "Someone who likes variety and change",
-        "Loyal",
-        "A decision-maker"
-      ],
-      "id": 26
-    },
-    {
       "firstName": "Sylvain",
       "lastName": "Matter",
       "personalityType": "P",
@@ -210,12 +162,51 @@
       "id": 27
     }
   ],
-  "groups": [
+  "group1": [
     [
-      "Adele ",
-      "Théodore",
+      "John",
+      "Nelson",
+      "Garfield",
+      "Yoko"
+    ],
+    [
+      "John",
+      "Alan",
+      "Spip",
+      "Yoko"
+    ],
+    [
+      "John",
+      "Marsu",
       "Ducobu",
-      "Pacôme "
+      "Yoko"
+    ],
+    [
+      "John",
+      "Alan",
+      "Ducobu",
+      "Amanda"
+    ],
+    [
+      "John",
+      "Théodore",
+      "Garfield",
+      "Spirou"
+    ],
+    [
+      "Spirou",
+      "Garfield",
+      "Lucky",
+      "John"
+    ],
+    [
+      "John",
+      "Lucky",
+      "Alan",
+      "Ducobu"
     ]
+  ],
+  "group2": [
+    []
   ]
 }

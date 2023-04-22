@@ -1,20 +1,9 @@
 import React, {useState, useEffect} from "react"
 import {behavior} from "../utils/behaviorCheckbox.js"
 
-function Checkbox({arrayLetters, setArrayLetters, trigger, answers, setAnswers}){
-    const [checked, setChecked]=useState([])
-    const [selected, setSelected]=useState(false)
+function Checkbox({arrayLetters, setArrayLetters, answers, setAnswers, checked, setChecked, selected, setSelected}){
     const [isDisabled, setIsDisabled]=useState(false)
     
-
-useEffect(()=>{
-    let resetArray=[]
-    if (trigger){
-        setChecked(resetArray)
-        setSelected(false)
-        console.log ("triggered")
-    }
-},[trigger])
 
    const handleCheck = (e) => {
 

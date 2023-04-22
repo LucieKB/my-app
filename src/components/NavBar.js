@@ -8,13 +8,13 @@ function NavBar(){
     return (
         <nav>
           <NavLink exact to="/">
-            Home
+            <strong>Home</strong>
           </NavLink> 
           <NavLink  to="/newForm">
-            Add a New Student
+            <strong>Add a New Student</strong>
           </NavLink>
           <NavLink  to="/studentList">
-            Students List
+            <strong>Students List</strong>
           </NavLink>
         </nav>
       );

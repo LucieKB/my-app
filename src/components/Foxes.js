@@ -1,7 +1,8 @@
 
 import React from "react";
+import DeleteButton from "./DeleteButton";
 
-function Foxes({students, onClickGroup, setStudentClicked}){
+function Foxes({students, setStudentClicked, setStudents, deleteOneStudent }){
 
     const foxes = students.filter((student)=>student.personalityType === "F")
 
@@ -12,7 +13,7 @@ function Foxes({students, onClickGroup, setStudentClicked}){
         {foxes.length>0 && (
           foxes.map((fox)=>{
           return(
-            <>
+            
             <div key={fox.id} className="studentListBtn">
             <button 
             id={fox.id}
@@ -22,11 +23,13 @@ function Foxes({students, onClickGroup, setStudentClicked}){
               {fox.firstName} {fox.lastName}
             </button>
          
-        <button id={fox.id} onClick={onClickGroup}>X</button>
-            
+            <textarea className="group-area jc-center" maxLength="1" placeholder="Group #"></textarea>
+            <div>
+          <DeleteButton key={fox.id} student={fox} setStudents={setStudents} deleteOneStudent={deleteOneStudent}/>
+          </div>
             </div>
          
-          </>
+         
         )}))}
         </ul> 
         </div>  

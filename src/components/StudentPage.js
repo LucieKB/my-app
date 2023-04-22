@@ -7,8 +7,7 @@ import Home from "./Home"
 
 function StudentPage(){
     const [students, setStudents]=useState([])
-    const [newGroups, setNewGoups]= useState([])
-   
+    
     
 
     useEffect(()=>{
@@ -22,10 +21,12 @@ function handleAddStudent (newStudent){
       setStudents([...students, newStudent])
     }
 
-function handleAddNewGroup (newGroup){
-  console.log("Add new Group", newGroup)
-  setNewGoups([...newGroups, newGroup])
-}
+    function handleDeleteAll(){
+      console.log("handleDeleteAll")
+      const noStudents=[]
+     setStudents(noStudents)
+    }
+
 
 return (
     <main>
@@ -34,7 +35,7 @@ return (
         <NewStudentForm students={students} setStudents={setStudents} onAddStudent={handleAddStudent}/>
       </Route>
       <Route path = "/studentList">
-        <StudentList students={students} setStudents={setStudents} onAddNewGroup={handleAddNewGroup} newGroups={newGroups}/>
+        <StudentList students={students} setStudents={setStudents} OnDeleteStudents={handleDeleteAll}/>
       </Route>
       <Route path = "/questions">
         <Checkbox />

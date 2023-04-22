@@ -3,11 +3,12 @@ import { useHistory } from "react-router-dom";
 import Checkbox from "./Checkbox";
 
 
-function NewStudentForm({students, setStudents, onAddStudent}){
+function NewStudentForm({onAddStudent}){
 const [arrayLetters, setArrayLetters]=useState([])
 const [answers, setAnswers]=useState([])
-const [trigger, setTrigger]=useState(0);
 const history = useHistory();
+const [checked, setChecked]=useState([])
+const [selected, setSelected]=useState(false)
 const [formData, setFormData] = useState({
   firstName:"",
   lastName:"",
@@ -47,7 +48,9 @@ function handleSubmit(e){
   .then(r=>r.json())
   .then (newStudent=>onAddStudent(newStudent));
 
-
+let resetArray=[]
+setChecked(resetArray)
+setSelected(false)
   
 setFormData({
   firstName : "",
@@ -58,7 +61,6 @@ setFormData({
 
 resetHistory(); 
 
-setTrigger((trigger) => trigger+1);
 }
 
 
@@ -85,7 +87,7 @@ setTrigger((trigger) => trigger+1);
       />
       <div>
         <br />
-      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters} trigger={trigger} answers={answers} setAnswers={setAnswers}/>
+      <Checkbox arrayLetters={arrayLetters} setArrayLetters={setArrayLetters} answers={answers} setAnswers={setAnswers} checked={checked} setChecked={setChecked} selected={selected} setSelected={setSelected} />
       </div>
   
       <h4>Finally, click on the button below to find out which animal you are !</h4>

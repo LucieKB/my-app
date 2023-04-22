@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 import Lions from "./Lions";
 import Otters from "./Otters";
 import Pandas from "./Pandas";
@@ -8,125 +9,70 @@ import "./StudentList.css"
 
 
 
-function StudentList({students, onAddNewGroup}){
+function StudentList({students, setStudents}){
   const [studentClicked, setStudentClicked] = useState()
-  const [inGroup, setInGroup]=useState([])
-  const [isDone, setIsDone]=useState(false)
- 
+  const history = useHistory()
 
- 
-
-let number = 1
-
-
-
-function handleGroup(e){
-
-let arrayLength = inGroup.length;  
-let thisStudent = [];
- 
- if(0<arrayLength<=4){
-
-
-  console.log(e.target.id)
-  e.currentTarget.disabled=true
+  function deleteOneStudent(studentToDelete){
+    const upDatedStudents = students.filter((student)=>student.id !== studentToDelete.id)
+    setStudents(upDatedStudents)
+   }
   
-  students.forEach((
-    (student) => {
-    if(student.id == e.target.id){
-      thisStudent = student.firstName}}));
-
-   setInGroup([...inGroup, thisStudent])}
-    
-if (arrayLength === 4){
-      alert("Groups can't be bigger than 4 students")
-      setInGroup(inGroup)
-    }
- 
-  }
-   
-  function handleGroupDone(){
-    fetch ("http://localhost:3001/groups",{
-      method:"POST",
-      headers:{
-        "Content-Type": "application/json" 
-      },
-      body: JSON.stringify(inGroup)
+  function handleOnClickDelete(){
+    console.log("delete")
+    fetch ("http://localhost:3001/students",{
+      method:"DELETE",
   })
-    .then(r=>r.json())
-    .then (newGroup=>onAddNewGroup(newGroup));
-    setIsDone(!isDone)
+    .then((r)=> {
+      if (!r.ok){
+        throw new Error ("Something went wrong");  
+      }
+      history.push('/');
+    })
+    .catch((error)=> console.log(error))
   }
-
-console.log(inGroup)
-
-
-
-
-
-return(
-  <>
-  <div className="titleList">
-    
-    <center>You have <b><mark>{students.length}</mark></b> students to group for this activity !</center>
-
  
-
-    <div className="Groups">
-      <h3> Group {number}</h3>
-      <div className = "group-checked">
-      {isDone === false? (
-      <button className="not-finished-group" onClick = {handleGroupDone}>This group is done !</button>
-      ) : (<button className="not-finished-group" >✅</button> )
-      }
-      </div>
-      {inGroup.map(student=>{
-        return(
-          <li>
-           {student} 
-          </li>)
-    })}    
-    </div>
-
-    <div className="Groups">
-      <h3> Group {number+1}</h3>
-      <div className = "group-checked">
-      {isDone === false? (
-      <button className="not-finished-group" onClick = {handleGroupDone}>This group is done !</button>
-      ) : (<button className="not-finished-group" >✅</button> )
-      }
-      </div>
-      {inGroup.map(student=>{
-        return(
-          <li>
-           {student} 
-          </li>)
-    })}    
-    </div>
+return(
+ 
+  <div className="titleList">
+ <header>   
+    <center><h2>You have <b><mark>{students.length}</mark></b> students to group for this activity !</h2></center>
+    <article>
+    <h3>You can <u>click on each student's name</u> to see their answer to the personnality test, the strengths and weaknesses of their personality type and how they usually work in a group setting.</h3>
+    </article>
     
-    
-  </div>
+      <ol>
+      <li>Get familiar with each personality type.</li>
+      <li>You know your students better than anyone, so even though it is adivsed <strong>not to put two of the same personality type together in a group</strong>, you still have the freedom to group them as you wish.</li>
+      <li>Now, you can type the number of the group so that your students know who they are working with for this project !</li>
+     </ol>
+</header>
+
+
 <div className="studentListBtn"> 
-    <Lions students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} onClickGroup={handleGroup}/>
-    <Otters students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} onClickGroup={handleGroup}/>     
-    <Pandas students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} onClickGroup={handleGroup}/>
-    <Foxes students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} onClickGroup={handleGroup} />         
+    <Lions students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} deleteOneStudent={deleteOneStudent} />
+    <Otters students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} deleteOneStudent={deleteOneStudent}/>     
+    <Pandas students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} deleteOneStudent={deleteOneStudent}/>
+    <Foxes students={students} setStudentClicked={setStudentClicked} studentClicked={studentClicked} deleteOneStudent={deleteOneStudent}/>         
 </div>
 <div> 
 {students.map((student)=>{
         if (student.id === studentClicked)
             return (
                 <StudentCard key={student.id} student={student}/> )})}        
-</div>    
-</>);
+</div> 
+<br />
+<div className="delete">
+  <h3><center> If you are done with your project, click on the Delete button below, and all you student datas for this class will be removed.</center></h3>
+  <center><button className="DeleteBtn" 
+  onClick={handleOnClickDelete} >
+    Delete all students</button></center>
+  </div>   
+</div>
+
+
+)
 }
 
-export default StudentList;
 
- //    return(
-  //    [ `
-  // student 1 : ${inGroup[0]},
-  // student 1 : ${inGroup[1]},
-  // student 1 : ${inGroup[2]},
-  // student 1 : ${inGroup[3]}`])
-
+export default StudentList

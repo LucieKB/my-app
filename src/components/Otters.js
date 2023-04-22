@@ -1,9 +1,11 @@
 import React from "react";
+import DeleteButton from "./DeleteButton";
 
 
-function Otters({students, onClickGroup, setStudentClicked}){
+function Otters({students, setStudentClicked, setStudents, deleteOneStudent}){
 
     const otters = students.filter((student)=>student.personalityType === "O")
+    
 
     return(
         <div id="otters" className="studentTable">
@@ -12,7 +14,7 @@ function Otters({students, onClickGroup, setStudentClicked}){
         {otters.length>0 && (
           otters.map((otter)=>{
           return(
-            <>
+          
             <div key={otter.id} className="studentListBtn">
             <button 
             id={otter.id}
@@ -22,10 +24,12 @@ function Otters({students, onClickGroup, setStudentClicked}){
               {otter.firstName} {otter.lastName}
             </button>
         
-        <button id={otter.id} onClick={onClickGroup}>X</button>
-          
+            <textarea className="group-area jc-center" maxLength="1" placeholder="Group #"></textarea>
+            <div>
+          <DeleteButton key={otter.id} student={otter} setStudents={setStudents} deleteOneStudent={deleteOneStudent}/>
+          </div>
             </div>   
-            </>
+            
           )}))}
           </ul> 
           </div>  
