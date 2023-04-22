@@ -17,6 +17,7 @@ Every student then takes a short personality Test in the "Add a New Student" tab
 
 Once all the students have completed the test, the tab "Student List" will list the students according to their personality type. The teacher can check the student's answer and what that personality type's strengths and weaknesses are, before typing a group number in the text area. 
 
-![Alt Student List on the app] (../utils/Image explanation.png)
+![Screen Shot 2023-04-22 at 4 38 54 PM](https://user-images.githubusercontent.com/116243101/233810752-cd6a328c-85f5-4e32-aea5-1ecae158bedf.png)
+
 
 Once the activity is over, the teacher can choose to delete a student individually from the database, or all students at once if they are working with a new class.
