@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# The Grouping Tool 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Grouping Tool is an single page application meant to help teachers when they work with their students in a group setting
 
-## Available Scripts
+## Running the App
 
-In the project directory, you can run:
+You will need to first have to open two terminals and have :
+1. the local server running by typing 
+```npm run server```
+2. Start the app on your browser by typing
+```npm start```
 
-### `npm start`
+## Using the Grouping Tool
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The "Home" tab gives you some background on the research that lead to the development of this app, and how to use it.
+Every student then takes a short personality Test in the "Add a New Student" tab. Based on those results, the student will be assigned an animal personality. [Dr Gary Smalley and Dr John Trent's studies] (https://www.sagepub.com/sites/default/files/upm-binaries/47076_Hess___Ch1.pdf) have shown that in a work setting, the team's efficiency and productivity was optimal if the team was made of members of different personalities. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Once all the students have completed the test, the tab "Student List" will list the students according to their personality type. The teacher can check the student's answer and what that personality type's strengths and weaknesses are, before typing a group number in the text area. 
 
-### `npm test`
+![Alt Student List on the app] (../utils/Image explanation.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Once the activity is over, the teacher can choose to delete a student individually from the database, or all students at once if they are working with a new class.
